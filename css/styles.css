@@ -103,11 +103,20 @@ img {
 }
 .nav-ul .item:not(:last-child) {
   margin-right: 40px;
+  position: relative;
 }
 
-/*.nav-ul .item {
-  background-color: tomato;
-}*/
+.link.current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--ocean);
+  border-radius: 2px;
+}
 
 .site-nav .link {
   display: block;
@@ -595,23 +604,23 @@ img {
   margin-right: 24px;
 }
 
-.partfolio-list {
+.portfolio-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.partfolio-list .item:not(:nth-child(3n)) {
+.portfolio-list .item:not(:nth-child(3n)) {
   margin-right: 24px;
 }
-.partfolio-list .item:not(:nth-last-child(-n + 3)) {
+.portfolio-list .item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 48px;
 }
 
-.partfolio-list .link {
+.portfolio-list .link {
   display: inline-block;
 }
 
-.partfolio-list .link:is(:hover, :focus) {
+.portfolio-list .link:is(:hover, :focus) {
   box-shadow: var(--shadow-portfolio);
 }
 
@@ -624,7 +633,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 }
-.partfolio-list .title {
+.portfolio-list .title {
   margin: 0;
   margin-bottom: 8px;
 
@@ -635,10 +644,62 @@ img {
   line-height: 1.2;
 }
 
-.partfolio-list .text-kind {
+.portfolio-list .text-kind {
   margin: 0;
 
   color: var(--slate);
+}
+
+/*=============================Страница  cantacts======================== */
+
+.link.current {
+  color: var(--ocean);
+}
+
+.nav-ul .item {
+  position: relative;
+}
+
+.title-contacts {
+  text-align: center;
+}
+
+/* ===============================Project Card======================== */
+
+.backdrop {
+  position: relative;
+}
+
+.portfolio-action {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 100%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 250ms linear;
+
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 40px;
+  text-align: center;
+
+  background: var(--iris);
+  color: var(--cloud);
+  font-weight: 400;
+}
+
+.portfolio-list .link:is(:hover, :focus) .portfolio-action {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.portfolio-list .link:is(:hover, :focus) {
+  border: 0.5px solid var(--cloud);
 }
 
 /* Основной цвет текста NAVY BLUE:#2E2F42 */
