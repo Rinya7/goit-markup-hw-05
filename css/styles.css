@@ -1,5 +1,6 @@
 :root {
-  --iris: #4d5ae5;
+  --iris: hsl(235, 75%, 60%);
+  --iris-bcg: hsl(235, 75%, 60%, 0.95);
   --ocean: #404bbf;
   --navy-blue: #2e2f42;
   --green: #31d0aa;
@@ -14,6 +15,8 @@
   --bcg-cloud: linear-gradient(rgba(244, 244, 253, 1), rgba(244, 244, 253, 1));
   --bcg-social: rgba(255, 255, 255, 0.1);
   --shadow-portfolio: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  --shadow-portfolio-activ: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   --shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   --shadow-btn: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
@@ -619,8 +622,7 @@ img {
 .portfolio-list .link {
   display: inline-block;
 }
-
-.portfolio-list .link:is(:hover, :focus) {
+.portfolio-list .link {
   box-shadow: var(--shadow-portfolio);
 }
 
@@ -688,7 +690,7 @@ img {
   padding-top: 40px;
   text-align: center;
 
-  background: var(--iris);
+  background-color: var(--iris-bcg);
   color: var(--cloud);
   font-weight: 400;
 }
@@ -698,8 +700,14 @@ img {
   opacity: 1;
 }
 
+.portfolio-list .link:is(:hover, :focus) .text-title {
+  border-bottom: 0.5px solid var(--cloud);
+  border-left: 0.5px solid var(--cloud);
+  border-right: 0.5px solid var(--cloud);
+}
+
 .portfolio-list .link:is(:hover, :focus) {
-  border: 0.5px solid var(--cloud);
+  box-shadow: var(--shadow-portfolio-activ);
 }
 
 /* Основной цвет текста NAVY BLUE:#2E2F42 */
