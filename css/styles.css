@@ -22,6 +22,10 @@
   --shadow-btn: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --navu-blue-modal: rgba(46, 47, 66, 0.4);
+  --bcg-modal: #fcfcfc;
+  --bcg-modal-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -732,6 +736,56 @@ img {
 .portfolio-list .link:is(:hover, :focus) {
   box-shadow: var(--shadow-portfolio-activ);
 }
+
+/* =============================МОДАЛЬНОЕ ОКНО========================== */
+.modal-bcg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--navu-blue-modal);
+  opacity: 1;
+  transition: transform 250ms var(--time-function),
+    opacity 250ms var(--time-function);
+}
+
+.modal-bcg.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  /* пропускает через себя клики и тд, когда скрыт этот элемент */
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 408px;
+  min-height: 576px;
+  background-color: var(--bcg-modal);
+  box-shadow: var(--bcg-modal-shadow);
+  border-radius: 4px;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================END МОДАЛЬНОЕ ОКНО====================== */
 
 /* Основной цвет текста NAVY BLUE:#2E2F42 */
 /* Цвет текста белый #FFFFFF */
