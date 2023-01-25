@@ -24,6 +24,7 @@
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
   --bcg-navy-blue-modal: rgba(46, 47, 66, 0.4);
   --bcg-modal: #fcfcfc;
+  --bodrer-btn-close: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -767,8 +768,18 @@ img {
 
 .btn-close {
   position: absolute;
+  display: flex;
   top: 24px;
   right: 24px;
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--cornflower);
+  border: 1px solid var(--bodrer-btn-close);
+  align-items: center;
+  justify-content: center;
 }
 
 /* Основной цвет текста NAVY BLUE:#2E2F42 */
