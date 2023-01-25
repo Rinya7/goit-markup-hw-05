@@ -780,6 +780,11 @@ img {
   border: 1px solid var(--bodrer-btn-close);
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms var(--time-function);
+}
+
+.btn-close:hover {
+  background-color: var(--ocean);
 }
 
 /* Основной цвет текста NAVY BLUE:#2E2F42 */
