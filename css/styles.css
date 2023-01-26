@@ -37,6 +37,10 @@ body {
   letter-spacing: 0.02em;
 }
 
+header {
+  border-bottom: 1px solid var(--cornflower);
+}
+
 img {
   display: block;
   width: 100%;
